@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Cinema</string>
+    <string name="name">Кинотеатр "MyCinema"</string>
+    <string name="Text">РАСПИСАНИЕ</string>
+    <string name="Pole">ВЫБОР ЗАЛА</string>
+    <string name="on">Войти в профиль</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
