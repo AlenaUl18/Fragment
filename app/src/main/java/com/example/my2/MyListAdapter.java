@@ -22,8 +22,8 @@ public class MyListAdapter extends ArrayAdapter<List1> {
     }
     public View getView(int position,View convertView, ViewGroup parent){
         View view = inflater.inflate(this.layout, parent, false);
-        ImageView image = view.findViewById(R.id.imageView1);
-        TextView text = view.findViewById(R.id.textView1);
+        ImageView image = view.findViewById(R.id.images);
+        TextView text = view.findViewById(R.id.texts);
         List1 list1 = Raspis.get(position);
         image.setImageResource(list1.getImage());
         text.setText(list1.getText());
