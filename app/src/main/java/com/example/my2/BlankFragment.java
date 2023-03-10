@@ -65,6 +65,14 @@ public class BlankFragment extends Fragment {
         button.setOnClickListener(v -> { Bundle result = new Bundle();
             result.putString("bundleKey", String.valueOf("Аня"));
             getParentFragmentManager().setFragmentResult("requestKey", result); getParentFragmentManager().beginTransaction().replace(R.id.fragment_container_view, BlankFragment2.class, null).commit();});
+        Button button1 = view.findViewById(R.id.button);
+        button1.setOnClickListener(v -> {
+            getParentFragmentManager().beginTransaction().replace(R.id.fragment_container_view, BlankFragment3.class, null).commit();
+        });
+        Button button2 = view.findViewById(R.id.button2);
+        button2.setOnClickListener(v -> {
+            getParentFragmentManager().beginTransaction().replace(R.id.fragment_container_view, BlankFragment4.class, null).commit();
+        });
     }
     @Override
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
