@@ -27,7 +27,7 @@ public class BlankFragment3 extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         for (int i=0; i<200; i++)
             list1.add(new List1(R.drawable.movie_player_play_video_svgrepo_com, String.valueOf(i)));
-        list = view.findViewById(R.id.List1);
+        list = view.findViewById(R.id.Recycle);
         MyListAdapter adapter = new MyListAdapter(getContext(), R.layout.item, list1);
         list.setAdapter(adapter);
         AdapterView.OnItemClickListener ItemListener = new AdapterView.OnItemClickListener() {
