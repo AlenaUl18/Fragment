@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
     <application
         android:allowBackup="true"
@@ -16,7 +17,10 @@
         <service
             android:name=".Services"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true"
+            android:permission="android.permission.SYSTEM_ALERT_WINDOW">
+
+        </service>
 
         <activity
             android:name=".MainActivity"
