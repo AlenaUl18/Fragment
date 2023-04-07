@@ -65,13 +65,15 @@
                 android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:src="@drawable/movie_player_play_video_svgrepo_com"/>
         </LinearLayout>
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="КинотеатрMyCinema"
             android:textAlignment="viewStart"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size30"

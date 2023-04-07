@@ -1,5 +1,6 @@
 package com.example.my2;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,17 +10,19 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.my2.Model.List1;
+
 import java.util.List;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHolder> {
-    interface OnClickListener {
+    public interface OnClickListener {
         void OnClick(List1 list, int position);
     }
     private final OnClickListener onClickListener;
     private final LayoutInflater inflater;
     private final List<List1> list1;
 
-    RecycleAdapter(Context context, List<List1> list1,OnClickListener onClickListener) {
+    public RecycleAdapter(Context context, List<List1> list1, OnClickListener onClickListener) {
         this.list1 = list1;
         this.inflater = LayoutInflater.from(context);
         this.onClickListener = onClickListener;
@@ -32,7 +35,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(RecycleAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecycleAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         List1 list = list1.get(position);
         holder.image.setImageResource(list.getImage());
         holder.text.setText(list.getText());

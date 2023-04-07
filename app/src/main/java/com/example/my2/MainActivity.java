@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.my2.UI.BlankFragment;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

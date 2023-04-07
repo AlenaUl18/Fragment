@@ -14,13 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.My2"
         tools:targetApi="31">
-        <service
-            android:name=".Services"
-            android:enabled="true"
-            android:exported="true"
-            android:permission="android.permission.SYSTEM_ALERT_WINDOW">
-
-        </service>
 
         <activity
             android:name=".MainActivity"

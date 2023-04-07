@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.my2.Model.List1;
+
 import java.util.List;
 
 public class MyListAdapter extends ArrayAdapter<List1> {

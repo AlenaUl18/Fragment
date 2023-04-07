@@ -1,4 +1,4 @@
-package com.example.my2;
+package com.example.my2.UI;
 
 import android.os.Bundle;
 
@@ -11,6 +11,10 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.my2.Model.List1;
+import com.example.my2.MyListAdapter;
+import com.example.my2.R;
 
 import java.util.ArrayList;
 

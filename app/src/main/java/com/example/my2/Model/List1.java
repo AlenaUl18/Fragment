@@ -1,4 +1,4 @@
-package com.example.my2;
+package com.example.my2.Model;
 
 public class List1 {
     private int image;

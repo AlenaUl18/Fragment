@@ -1,4 +1,4 @@
-package com.example.my2;
+package com.example.my2.UI;
 
 import android.os.Bundle;
 
@@ -8,10 +8,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
+
+import com.example.my2.Model.List1;
+import com.example.my2.R;
+import com.example.my2.RecycleAdapter;
 
 import java.util.ArrayList;
 
@@ -20,9 +22,7 @@ public class BlankFragment4 extends Fragment {
     public BlankFragment4() {
         super(R.layout.fragment_blank4);
     }
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
-        return inflater.inflate(R.layout.fragment_blank4,container, false);
-    }
+
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         for (int i=0; i<200; i++)
