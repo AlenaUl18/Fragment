@@ -19,10 +19,10 @@
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
-            android:backgroundTint="@color/purple_500"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/Text"
+            android:backgroundTint="@color/purple_500"
+            android:text="@string/Pole"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size30" />
     </LinearLayout>
@@ -39,10 +39,10 @@
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
-            android:backgroundTint="@color/purple_500"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/Pole"
+            android:backgroundTint="@color/purple_500"
+            android:text="@string/Text"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size30" />
     </LinearLayout>
@@ -58,15 +58,15 @@
             android:layout_width="90dp"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="-2dp"
+            android:layout_marginEnd="-1dp"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/imageView2"
+            <ImageButton
+                android:id="@+id/imageButton3"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/movie_player_play_video_svgrepo_com"/>
+                app:srcCompat="@drawable/movie_player_play_video_svgrepo_com" />
         </LinearLayout>
 
         <TextView

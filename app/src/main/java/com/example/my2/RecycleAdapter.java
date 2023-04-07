@@ -10,22 +10,23 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.my2.Model.List1;
+import com.example.my2.Model.CinemaInfo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHolder> {
     public interface OnClickListener {
-        void OnClick(List1 list, int position);
+        void OnClick(CinemaInfo list, int position);
     }
     private final OnClickListener onClickListener;
     private final LayoutInflater inflater;
-    private final List<List1> list1;
+    private  List<CinemaInfo> cinemaInfo;
 
-    public RecycleAdapter(Context context, List<List1> list1, OnClickListener onClickListener) {
-        this.list1 = list1;
+    public RecycleAdapter(Context context, OnClickListener onClickListener) {
         this.inflater = LayoutInflater.from(context);
         this.onClickListener = onClickListener;
+        this.cinemaInfo =new ArrayList<>();
     }
 
     @Override
@@ -36,7 +37,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(RecycleAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        List1 list = list1.get(position);
+        CinemaInfo list = cinemaInfo.get(position);
         holder.image.setImageResource(list.getImage());
         holder.text.setText(list.getText());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -46,10 +47,16 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
             }
         });
     }
+    @SuppressLint("NotifyDataSetChanged")
+    public void update(final List<CinemaInfo> cinemaInfo){
+        this.cinemaInfo.clear();
+        this.cinemaInfo = cinemaInfo;
+        notifyDataSetChanged();
+    }
 
     @Override
     public int getItemCount() {
-        return list1.size();
+        return cinemaInfo.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

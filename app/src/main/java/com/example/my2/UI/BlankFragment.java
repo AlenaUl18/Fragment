@@ -7,12 +7,14 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,17 +30,33 @@ public class BlankFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Button button = view.findViewById(R.id.button3);
-        button.setOnClickListener(v -> { Bundle result = new Bundle();
-            result.putString("bundleKey", String.valueOf("Аня"));
-            getParentFragmentManager().setFragmentResult("requestKey", result); getParentFragmentManager().beginTransaction().replace(R.id.fragment_container_view, BlankFragment2.class, null).commit();});
-        Button button1 = view.findViewById(R.id.button);
-        button1.setOnClickListener(v -> {
-            getParentFragmentManager().beginTransaction().replace(R.id.fragment_container_view, BlankFragment3.class, null).commit();
+        Button button = view.findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_BlankFragment_to_BlankFragment3);
+            }
         });
-        Button button2 = view.findViewById(R.id.button2);
-        button2.setOnClickListener(v -> {
-            getParentFragmentManager().beginTransaction().replace(R.id.fragment_container_view, BlankFragment4.class, null).commit();
+        Button button1 = view.findViewById(R.id.button2);
+        button1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_BlankFragment_to_BlankFragment4);
+            }
+        });
+        Button button2 = view.findViewById(R.id.button3);
+        button2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_BlankFragment_to_BlankFragment2);
+            }
+        });
+        ImageButton button4 = view.findViewById(R.id.imageButton3);
+        button4.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_BlankFragment_to_BlankFragment5);
+            }
         });
     }
 }

@@ -8,15 +8,15 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.my2.Model.List1;
+import com.example.my2.Model.CinemaInfo;
 
 import java.util.List;
 
-public class MyListAdapter extends ArrayAdapter<List1> {
+public class MyListAdapter extends ArrayAdapter<CinemaInfo> {
     private final LayoutInflater inflater;
-    private final List<List1>Raspis;
+    private final List<CinemaInfo>Raspis;
     private int layout;
-    public MyListAdapter(Context context,int resource,List<List1>Raspis){
+    public MyListAdapter(Context context,int resource,List<CinemaInfo>Raspis){
         super (context, resource,Raspis);
         this.inflater=LayoutInflater.from(context);
         this.layout=resource;
@@ -26,9 +26,9 @@ public class MyListAdapter extends ArrayAdapter<List1> {
         View view = inflater.inflate(this.layout, parent, false);
         ImageView image = view.findViewById(R.id.images);
         TextView text = view.findViewById(R.id.texts);
-        List1 list1 = Raspis.get(position);
-        image.setImageResource(list1.getImage());
-        text.setText(list1.getText());
+        CinemaInfo cinemaInfo = Raspis.get(position);
+        image.setImageResource(cinemaInfo.getImage());
+        text.setText(cinemaInfo.getText());
         return view;
     }
 }

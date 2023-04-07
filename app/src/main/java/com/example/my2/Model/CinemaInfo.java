@@ -1,6 +1,6 @@
 package com.example.my2.Model;
 
-public class List1 {
+public class CinemaInfo {
     private int image;
     private String text;
 
@@ -12,7 +12,7 @@ public class List1 {
         return text;
     }
 
-    public List1(int image, String text){
+    public CinemaInfo(int image, String text){
         this.image=image;
         this.text=text;
     }
