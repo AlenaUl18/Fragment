@@ -62,6 +62,7 @@ public class BlankFragment2 extends Fragment {
                     throw new RuntimeException(e);
                 }
                 viewPattern.CreateExternal(requireContext(), "external", Name + Promocode);
+                viewPattern.CreateSharedPreferences(requireContext(), "shared_preference", Name + Promocode);
                 Navigation.findNavController(view).navigate(R.id.action_BlankFragment2_to_BlankFragment5);
             }
         });

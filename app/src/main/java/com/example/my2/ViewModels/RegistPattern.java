@@ -3,6 +3,7 @@ package com.example.my2.ViewModels;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Environment;
 
@@ -36,5 +37,10 @@ public void createAppSpec (Context context, String filename, String fileContent)
             }
         }
     }
-
+    public void CreateSharedPreferences(Context context, String fileName, String fileInformation) {
+        SharedPreferences settings = context.getSharedPreferences(fileName, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("SavedData", fileInformation);
+        editor.apply();
+    }
 }
