@@ -35,7 +35,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class BlankFragment2 extends Fragment {
-    String filename = "Cinema";
     public BlankFragment2() {
         super(R.layout.fragment_blank2);
     }
@@ -46,17 +45,6 @@ public class BlankFragment2 extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = String.valueOf(((EditText) view.findViewById(R.id.editTextTextPersonName4)).getText());
-                String prom = String.valueOf(((EditText) view.findViewById(R.id.editTextTextPersonName6)).getText());
-                String pass = String.valueOf(((EditText) view.findViewById(R.id.editTextTextPassword4)).getText());
-            File file = new File(getContext().getFilesDir(), filename);
-            try (FileOutputStream fos = getContext().openFileOutput(filename, Context.MODE_PRIVATE)) {
-                fos.write((name+"\n").getBytes());
-                fos.write((prom+"\n").getBytes());
-                fos.write((pass+"\n").getBytes());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
                 Navigation.findNavController(view).navigate(R.id.action_BlankFragment2_to_BlankFragment5);
             }
         });
