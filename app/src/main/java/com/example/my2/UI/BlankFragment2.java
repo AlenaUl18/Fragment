@@ -28,6 +28,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.my2.DataSource.Room.DataBase;
+import com.example.my2.DataSource.User;
 import com.example.my2.R;
 import com.example.my2.ViewModels.RegistPattern;
 import com.google.android.material.textfield.TextInputLayout;
@@ -39,6 +41,7 @@ import java.io.IOException;
 
 public class BlankFragment2 extends Fragment {
     RegistPattern viewPattern;
+    DataBase user;
     public BlankFragment2() {
         super(R.layout.fragment_blank2);
     }
@@ -46,6 +49,7 @@ public class BlankFragment2 extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         viewPattern = new ViewModelProvider(this).get(RegistPattern.class);
+        user = DataBase.getInstance(getContext());
     }
 
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -55,6 +59,7 @@ public class BlankFragment2 extends Fragment {
             @Override
             public void onClick(View v) {
                 String Name = String.valueOf(((EditText) view.findViewById(R.id.editTextTextPersonName4)).getText());
+                String Pass = String.valueOf(((EditText) view.findViewById(R.id.editTextTextPassword4)).getText());
                 String Promocode = String.valueOf(((EditText) view.findViewById(R.id.editTextTextPersonName6)).getText());
                 try {
                     viewPattern.createAppSpec(requireContext(), "app_specific", Name + Promocode);
@@ -63,6 +68,7 @@ public class BlankFragment2 extends Fragment {
                 }
                 viewPattern.CreateExternal(requireContext(), "external", Name + Promocode);
                 viewPattern.CreateSharedPreferences(requireContext(), "shared_preference", Name + Promocode);
+                user.userDao().insertUser(new User(Name,Pass,Promocode));
                 Navigation.findNavController(view).navigate(R.id.action_BlankFragment2_to_BlankFragment5);
             }
         });
