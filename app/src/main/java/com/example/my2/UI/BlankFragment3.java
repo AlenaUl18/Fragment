@@ -1,10 +1,16 @@
 package com.example.my2.UI;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.my2.R;
 
@@ -12,8 +18,33 @@ public class BlankFragment3 extends Fragment {
     public BlankFragment3() {
         super(R.layout.fragment_blank3);
     }
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Intent intent = requireActivity().getIntent();
+        String action = intent.getAction();
+        String type = intent.getType();
+
+        if (Intent.ACTION_SEND.equals(action) && type != null) {
+            if ("text/*".equals(type)) {
+                ((TextView)getView().findViewById(R.id.textView2)).setText(intent.getStringExtra(Intent.EXTRA_TEXT));
+            }
+        }
+    }
     public void onViewCreated(View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
+        Button but = view.findViewById(R.id.button4);
+        but.setOnClickListener(v -> {
+            String number = "89017016838";
+            Uri map = Uri.parse("tel:" + number);
+            Intent telIntent = new Intent(Intent.ACTION_VIEW, map);
+            telIntent.putExtra(Intent.EXTRA_TEXT, "number");
+            try {
+                startActivity(telIntent);
+            } catch (ActivityNotFoundException e) {
+                e.getStackTrace();
+            }
+        });
 
     }
 }
