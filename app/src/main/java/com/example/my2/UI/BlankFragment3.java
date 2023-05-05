@@ -7,6 +7,8 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.work.OneTimeWorkRequest;
+import androidx.work.WorkManager;
 
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.my2.R;
+import com.example.my2.blurWorker;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -22,6 +25,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 public class BlankFragment3 extends Fragment {
+    private WorkManager workManager;
     public BlankFragment3() {
         super(R.layout.fragment_blank3);
     }
@@ -52,6 +56,8 @@ public class BlankFragment3 extends Fragment {
                 e.getStackTrace();
             }
         });
+        workManager = WorkManager.getInstance();
+        workManager.enqueue(new OneTimeWorkRequest.Builder(blurWorker.class).build());
         Callable<String> callableTask = () -> {
             return "1 зал";
         };
