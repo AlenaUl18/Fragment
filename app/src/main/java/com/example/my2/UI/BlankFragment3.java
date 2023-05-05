@@ -10,9 +10,16 @@ import androidx.fragment.app.Fragment;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.my2.R;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class BlankFragment3 extends Fragment {
     public BlankFragment3() {
@@ -45,6 +52,23 @@ public class BlankFragment3 extends Fragment {
                 e.getStackTrace();
             }
         });
+        Callable<String> callableTask = () -> {
+            return "1 зал";
+        };
+
+        final ExecutorService service = Executors.newFixedThreadPool(2);
+        Future<String> future;
+        future = service.submit(callableTask);
+
+        TextView text = view.findViewById(R.id.textView2);
+        try {
+            text.setText(future.get());
+        } catch (ExecutionException e) {
+            throw new RuntimeException(e);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        service.shutdown();
 
     }
 }
