@@ -1,6 +1,7 @@
 package com.example.my2.UI;
 
 import android.content.Context;
+import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
@@ -29,6 +30,11 @@ public class BlankFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ImageView animation = view.findViewById(R.id.imageView4);
+        Drawable drawable = animation.getDrawable();
+        if (drawable instanceof Animatable) {
+            ((Animatable) drawable).start();
+        }
 
         Button button = view.findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener(){
