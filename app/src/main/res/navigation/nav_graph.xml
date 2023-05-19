@@ -10,16 +10,32 @@
         tools:layout="@layout/fragment_blank">
         <action
             android:id="@+id/action_BlankFragment_to_BlankFragment3"
-            app:destination="@+id/BlankFragment3" />
+            app:destination="@+id/BlankFragment3"
+            app:enterAnim="@anim/rise_forward"
+            app:exitAnim="@anim/fade_forward"
+            app:popEnterAnim="@anim/rise_back"
+            app:popExitAnim="@anim/fade_back"/>
         <action
             android:id="@+id/action_BlankFragment_to_BlankFragment4"
-            app:destination="@+id/BlankFragment4" />
+            app:destination="@+id/BlankFragment4"
+            app:enterAnim="@anim/rise_forward"
+            app:exitAnim="@anim/fade_forward"
+            app:popEnterAnim="@anim/rise_back"
+            app:popExitAnim="@anim/fade_back"/>
         <action
             android:id="@+id/action_BlankFragment_to_BlankFragment2"
-            app:destination="@+id/BlankFragment2" />
+            app:destination="@+id/BlankFragment2"
+            app:enterAnim="@anim/rise_forward"
+            app:exitAnim="@anim/fade_forward"
+            app:popEnterAnim="@anim/rise_back"
+            app:popExitAnim="@anim/fade_back"/>
         <action
             android:id="@+id/action_BlankFragment_to_BlankFragment5"
-            app:destination="@+id/BlankFragment5" />
+            app:destination="@+id/BlankFragment5"
+            app:enterAnim="@anim/rise_forward"
+            app:exitAnim="@anim/fade_forward"
+            app:popEnterAnim="@anim/rise_back"
+            app:popExitAnim="@anim/fade_back"/>
     </fragment>
     <fragment
         android:id="@+id/BlankFragment2"
@@ -28,7 +44,11 @@
         tools:layout="@layout/fragment_blank2">
         <action
             android:id="@+id/action_BlankFragment2_to_BlankFragment5"
-            app:destination="@+id/BlankFragment5" />
+            app:destination="@+id/BlankFragment5"
+            app:enterAnim="@anim/rise_forward"
+            app:exitAnim="@anim/fade_forward"
+            app:popEnterAnim="@anim/rise_back"
+            app:popExitAnim="@anim/fade_back"/>
     </fragment>
     <fragment
         android:id="@+id/BlankFragment3"

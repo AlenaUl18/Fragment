@@ -1,43 +1,23 @@
 package com.example.my2.UI;
 
-import static androidx.core.app.NotificationCompat.PRIORITY_HIGH;
-
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.example.my2.DataSource.Room.DataBase;
 import com.example.my2.DataSource.User;
 import com.example.my2.R;
-import com.example.my2.ViewModels.RegistPattern;
-import com.google.android.material.textfield.TextInputLayout;
+import com.example.my2.Model.ViewModels.RegistPattern;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 
 public class BlankFragment2 extends Fragment {
     RegistPattern viewPattern;

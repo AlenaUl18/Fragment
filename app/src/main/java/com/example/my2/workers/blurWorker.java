@@ -1,4 +1,4 @@
-package com.example.my2;
+package com.example.my2.workers;
 
 import android.content.Context;
 import android.util.Log;
@@ -16,6 +16,6 @@ public class blurWorker extends Worker {
     @Override
     public Result doWork() {
         Log.i("Ulanova", "Это работает");
-        return null;
+        return Result.success();
     }
 }

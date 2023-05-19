@@ -1,4 +1,4 @@
-package com.example.my2.ViewModels;
+package com.example.my2.Model.ViewModels;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;

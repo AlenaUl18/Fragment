@@ -13,7 +13,7 @@ import android.view.View;
 import com.example.my2.Model.CinemaInfo;
 import com.example.my2.R;
 import com.example.my2.RecycleAdapter;
-import com.example.my2.ViewModels.ViewPattern;
+import com.example.my2.Model.ViewModels.ViewPattern;
 
 public class BlankFragment4 extends Fragment {
     private ViewPattern pattern;
